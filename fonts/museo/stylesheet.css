@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Museo 900';
+    src: url('Museo900-Regular.woff2') format('woff2'),
+        url('Museo900-Regular.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+

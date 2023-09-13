@@ -1,0 +1,170 @@
+main{
+    .card{
+        &__name{
+            font-family: $font-primary;
+            font-size: map-get($sizes, thumb);
+            font-weight: 900;
+            padding: 25px 25px 17px 28px;
+            text-align: center;
+            width: 100%;
+        }
+        &__head{
+            position: relative;
+            
+        }
+        &__padlock{
+            font-size:3.4rem;
+            left: 50%;
+            position: absolute;
+            top:50%;
+            transform: translate(-50%,-50%);
+            z-index: 100;
+        }
+        &__play{
+            border: 2px solid color(primary,base);
+            border-radius: 50%;
+            color: color(primary,base);
+            font-size:1.5rem;
+            left: inherit;
+            padding: 8px 7px 8px 9px;
+            position: absolute;
+            right: 8px;
+            top:66.5%;
+            z-index: 100;
+        }
+        &__new{
+            background-color:color(grayscale,white);
+            border-radius: map-get($sizes, thumb );
+            font-family: $font-secondary;
+            font-size: 13px;
+            font-weight: 900;
+            left: 6px;
+            padding: 2px 15px 3px 16px;
+            position: absolute;
+            top: 9px;
+        }
+        img{
+            width: 100%;
+        }
+        #image {
+            background-color: rgba(0,0,0,0.8);
+            filter:brightness(0.4);
+          }
+          
+        &__group{
+            width: 100%;
+        }
+        &__item{
+            margin: 10px 10px 3px 0.5px;
+            border: 1px solid color(border,color-1);
+            padding: 11px 10px 12px 10px;
+        }
+        &__category{
+            display: flex;
+            justify-content: space-between;
+            &-title{
+            color: color(grayscale,black);
+            font-family: $font-secondary;
+            font-size: map-get($sizes, small);
+            font-weight: 100;
+            }
+        }
+        &__body{
+            background-color: color(secondary,base);
+            margin-top: 5px;
+            padding: 5px 8px;
+            position: relative;
+        }
+        &__description{
+            padding-top: 10px;
+        }
+        &__btn{
+            left: inherit;
+            position: absolute;
+            right: 1px;
+            top: 5%;
+        }
+        .active{
+            &::before{
+                content: "\e911";
+                color: color(primary,base);
+            }
+        }
+        &__title{
+            color: color(grayscale,black);
+            display: block;
+            font-family: $font-secondary;;
+            font-size: map-get($sizes,small);
+            font-weight: 700;
+            height: 54px;
+            line-height:18px;
+            overflow: hidden;
+        }
+        &__recipe{
+            color: color(primary,base);
+            font-family: $font-secondary;;
+            font-size: map-get($sizes, small);
+            font-weight: 800;
+        }
+        i{
+            color:color(primary,base);
+            vertical-align: middle;
+        }
+    }
+}
+@include mq-min(md){
+    main{
+        .card{
+            margin: {
+                left:6rem;
+                right: 6rem;
+            }
+        }
+    }
+}
+@include mq-min(lg){
+    main{
+        .card{
+            padding-left: 70px;
+            padding-right: 51px;
+           &__name{
+                font-size: map-get($sizes, half);
+                padding: 58px 68px 50px 54px ;
+            }
+            img{
+                height: 194px;
+            }
+            &__padlock{
+                font-size:4.5rem;
+            }
+            &__play{
+                font-size:2rem;
+                padding: 11px 10px 11px 12px;
+                right: 13px;
+                top:69.5%;
+            }
+            &__new{
+                font-size: 1.5rem;
+                left: 7px;
+                padding: 5px 20px 5px 19px;
+                top: 10px;
+            }
+            &__body{
+                margin-top: 8px;
+                padding: 10px 10px 14px 12px;
+                margin-bottom: 14px;
+            }
+            &__item{
+                padding: 15px 15px 0px 15px;
+            } 
+            &__description{
+                padding-top: 18px;
+            }
+            &__title{
+                font-size: map-get($sizes,base);
+                height: 78px;
+                line-height:22px;
+            }
+        }
+    }
+}

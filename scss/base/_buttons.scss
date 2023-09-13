@@ -1,0 +1,42 @@
+.btn {
+   font-size:map-get($sizes, base);
+   
+   cursor: pointer;
+   @include button( transparent, color(primary,base));
+   @include mq-min(md) { 
+      width: auto;
+      font-size:2.3rem;
+   }
+   &.btn-primary {
+      @include button( color( primary, dark ), color( secondary,base) );
+      &.outline {
+         @include button( transparent, color( primary, dark ) );
+         border: .13rem solid color( primary, dark );
+         &:hover, &:active {
+            @include button( color( primary, dark ) );
+         }
+      }
+   }
+   &.btn-secondary {
+      @include button( color( secondary, base ), color( grayscale, base ) );
+      &.outline {
+         @include button( transparent, color( secondary, base ) );
+         border: .15rem solid color( secondary, base );
+         &:hover, &:active {
+            @include button( color( secondary, base ), color( grayscale, white ));
+         }
+      }
+   }
+   // sizes
+   &.small {
+      padding:    ( $font-size - .50rem ) ( $font-size );
+      font-size:  ( $font-size - .25rem );
+   }
+   &.medium{
+      font-size: map-get($sizes, small);
+      padding: 11px 38px;
+   }
+}
+
+@include  mq-min(md){
+}
